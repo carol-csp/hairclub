@@ -1,0 +1,15 @@
+<% provide(:title, "Home") %>
+
+<div class="banner">
+    <%= image_tag("background.png", :alt => "banner", :style =>"width:100%") %>
+</div>
+
+<div class="categoryshop"><h1>Shop by category</h1></div>
+<br />
+
+<div class="categories">
+    <br />
+<%=render 'layouts/categories'%>
+
+</div>
+

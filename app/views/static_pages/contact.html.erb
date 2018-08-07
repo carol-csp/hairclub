@@ -1,0 +1,43 @@
+<% provide(:title, "Contact Us") %>
+
+
+<div class="about">
+    
+    <h2>CONTACT US</h2>
+    
+    <div class="form">
+    
+    <form action="mailto:mneto_004@hotmail.com" method="post">
+
+		<label>Name: </label>
+		<br /><input type="text" style="width:400px" /> 
+		<br /><br />
+		<label>E-mail: </label>
+		<br /><input type="text" style="width:400px"  />
+		<br /><br />
+		<label>Phone number: </label>
+		<br /><input type="text" style="width:400px"  /> 
+		<br /><br />
+		<label>Order number: </label>
+		<br /><input type="text" style="width:400px" />
+		<br /><br />
+		<label> Subject</label>
+		<br /><select multiple name="Person" style="width:415px">
+		<option value="none" selected>-</option>
+		<option value="Shipping">Shipping</option>
+		<option value="Delivery">Delivery</option>
+		<option value="Refund">Refund</option>
+		<option value="Other">Other</option>
+		</select>
+		<br /><br />
+
+		<label>Description:</label><br />
+		<textarea rows="5" cols="20" style="width:400px; height: 80px">Plase enter your description here.</textarea>
+		<br /><br />
+
+		<input class type="submit" value="Send" onclick="welcome()"/>  <input type="reset" value="Reset" />
+		</form>
+		<br><br>
+</div>
+    
+</div>

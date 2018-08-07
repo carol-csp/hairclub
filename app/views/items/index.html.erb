@@ -1,0 +1,40 @@
+<% provide(:title, "Products") %>
+ <div id="itemsContainer" style="padding-top: 2%">
+<p id="notice"><%= notice %></p>
+
+<br/>
+  <h1 style="padding-top:16%" >ALL PRODUCTS</h1>
+     
+      <% @items.each do |item| %>
+      <div class="itemhols">
+       
+       
+       <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
+       <h1><%= item.title %></h1>
+      
+       <p>Price <%= number_to_currency(item.price, :unit => "€") %>
+       <br/>
+        Category: <%= item.category %>
+        <br/>
+        
+        Brand: <%= item.brand %></p>
+      
+       <p>
+        <a href="/cart/<%= item.id %>" class="button">Add To Cart</a>
+         <%= link_to 'Show',  item, :class => "button", :role => "button" %>
+         
+         <% if current_user.try(:admin?) %>
+
+         <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
+         <%= link_to 'Destroy',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+       <% end %>
+       </p>
+        
+      </div>
+    <% end %>
+      
+</div>
+<% if current_user.try(:admin?) %>
+<br>
+<%= link_to 'New Item',  new_item_path, :class => "button", :role => "button" %>
+<% end %>

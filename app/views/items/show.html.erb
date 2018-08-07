@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+
+
+ <div id="itemsContainer" >
+  
+   <h1 style="padding-top:20%; text-align: center" ><%= @item.title %></h1>
+   
+    <div class="image_config">
+     <%= image_tag @item.image_url, :class => 'welcomIm'  %>
+     </div>
+   
+    <div class="description">
+     
+     <%= @item.description %>
+        
+     </div>
+   <div class="itemhols2" >
+    
+       <p>Price <%= number_to_currency(@item.price, :unit => "€") %>
+       <br>
+        Category: <%= @item.category %>
+        <br>
+        Brand: <%= @item.brand %></p>
+       
+       <p>
+        <a href="/cart/<%= @item.id %>" class="button">Add To Cart</a>
+         <%= link_to 'Back',  items_path, :class => "button", :role => "button" %>
+         <% if current_user.try(:admin?) %>
+         <%= link_to 'Edit',  edit_item_path(@item), :class => "button", :role => "button" %>
+         <% end %>
+       </p>
+       </div>
+  
+   </div>

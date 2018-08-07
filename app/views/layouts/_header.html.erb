@@ -1,0 +1,49 @@
+     <div id="top"> <div class="reglog">
+     <% if user_signed_in? %>
+          
+        <a h ref="#">Hello <%= current_user.email %>
+        <%= link_to 'Log Out', destroy_user_session_path, :method => :delete %>
+        <% else %>
+        <%= link_to 'Create Account', new_user_registration_path %> | <%= link_to 'Log In', new_user_session_path %>
+        <% end %>
+     </div></div>
+     
+      <header class="header">
+      <div class="logo">
+       <a href= "/"><%= image_tag("logow.png", :alt => "Hair Club", :style =>"width:23%" ) %></a>
+       </div>
+       <div class="search">
+         <%= render 'layouts/search' %>
+      </div>
+      <div class="cart">
+      <%=image_tag("iconcart.png", :alt =>"Shopping Cart", :style => "width:50%") %>
+      <br>
+      <%= link_to "View Cart", "/cart", :style =>"color: white"%>
+     </div>
+     </div>
+     <div class="menu"> 
+        <ul class="menu">
+         <li><%= link_to "Home",  "/" %></li>
+         <li class="dropdown"><%= link_to "Shop by Category"%>
+           <div class="dropdown-content">
+           <%= link_to "Shampoo", "/category/Shampoo" %></a>
+           <%= link_to "Conditioners and Treatments", "/category/Conditioners%20and%20Treatments" %></a>
+           <%= link_to "Styling", "/category/Styling" %></a>
+           <%= link_to "Colours", "/category/Colours" %></a>
+           <%= link_to "Acessories", "/category/Acessories" %></a>
+           <%= link_to "All Products", "/items" %></a>
+      </div> </li>
+         <li><%= link_to "About", about_path %></li>
+         <li><%= link_to "Help", help_path %></li>
+         <li><%= link_to "Contact Us", contact_path %></li>
+       </ul>
+      </div>
+    
+    
+    
+    
+    
+    
+      
+    </header>
+    
